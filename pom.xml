@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mozart.Main</mainClass>
+                            <mainClass>src.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

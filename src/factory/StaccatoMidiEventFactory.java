@@ -3,7 +3,7 @@ package src.factory;
 import javax.sound.midi.*;
 
 public class StaccatoMidiEventFactory implements MidiEventFactory {
-    private static final int STACCATO_EXTENSION = 120;
+    private static final int STACCATO_REDUCTION = 120;
 
     @Override
     public MidiEvent createNoteOn(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
@@ -13,10 +13,9 @@ public class StaccatoMidiEventFactory implements MidiEventFactory {
     }
 
     @Override
-    public MidiEvent createNoteOff(int tick, int note, int velocity, int channel) throws InvalidMidiDataException {
+    public MidiEvent createNoteOff(int tick, int note, int channel) throws InvalidMidiDataException {
         ShortMessage message = new ShortMessage();
         message.setMessage(ShortMessage.NOTE_OFF, channel, note, 0);
-        return new MidiEvent(message, Math.max(tick - STACCATO_EXTENSION, 0));
+        return new MidiEvent(message, tick - STACCATO_REDUCTION);
     }
-
 }

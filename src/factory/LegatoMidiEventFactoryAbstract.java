@@ -1,4 +1,4 @@
-package factory;
+package src.factory;
 
 public class LegatoMidiEventFactoryAbstract implements LegatoMidiEventFactoryAbstract{
     @Override

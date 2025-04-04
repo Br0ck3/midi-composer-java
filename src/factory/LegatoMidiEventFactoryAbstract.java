@@ -1,9 +1,9 @@
 package src.factory;
 
-public class LegatoMidiEventFactoryAbstract implements LegatoMidiEventFactoryAbstract{
+public class LegatoMidiEventFactoryAbstract implements MidiEventFactoryAbstract{
     @Override
-    public MidiEventFactory createfactory() {
-        return new LegatoMidiEventFactory()
+    public MidiEventFactory createFactory() {
+        return new LegatoMidiEventFactory();
     }
     
 }
